@@ -22,7 +22,7 @@ stage('Build image node file manager') {
             }
         }
 
-        stage('Push image Angular') {
+        stage('Push image node file manager') {
             steps {
                 script {
                     withDockerRegistry([credentialsId: 'docker-hub-creds',url: ""]) {
@@ -38,7 +38,7 @@ stage('Build image node file manager') {
          stage('Build and Deploy node file manager') {
     steps {
        
-        sh "/usr/bin/docker-compose -f compose.yml up -d"
+        sh "/usr/bin/docker-compose -f compose.yaml up -d"
     }
 }
                 
