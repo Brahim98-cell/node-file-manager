@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  server:
+    build:
+      context: .
+    container_name: node-file-manager
+    image: brahim98/devops_project_front:node-file-manager
+    environment:
+      - NODE_ENV=production
+      - PORT=${PORT}
+      - HOST=${HOST}
+    ports:
+      - '${PORT}:${PORT}'
+    volumes:
+      - public:/usr/src/app/public
+    restart: unless-stopped
+
+volumes:
+  public:
