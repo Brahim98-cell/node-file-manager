@@ -33,7 +33,7 @@ stage('Build image node file manager') {
             }}
 
 
-
+/*
 
  
          stage('Deployment stage ') {
@@ -47,9 +47,11 @@ stage('Build image node file manager') {
 
 } 
 
+*/
 
 
-/*
+
+
          stage('Build and Deploy') {
     steps {
         // Checkout your source code from the version control system if needed
@@ -61,7 +63,7 @@ stage('Build image node file manager') {
     }
 }
      
-*/
+
 
 
     }
