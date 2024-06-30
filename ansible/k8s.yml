@@ -32,18 +32,11 @@
                     image: brahim98/devops_project_front:node-file-manager
                     imagePullPolicy: Always
                     ports:
-                      - containerPort: ${PORT}
+                      - containerPort: 7000
                 nodeSelector:
                     kubernetes.io/hostname: worker2      
        
-                env:
-                  - name: NODE_ENV
-                    value: production
-                  - name: PORT
-                    value: "${PORT}"
-                  - name: HOST
-                    value: "${HOST}"
-
+                
     - name: Create Node File Manager service
       k8s:
         state: present
@@ -62,8 +55,8 @@
               app: my-app-node-file-manager
             ports:
               - protocol: TCP
-                port: ${PORT}
-                targetPort: ${PORT}
+                port: 7000
+                targetPort: 7000
                 nodePort: 32567  # Adjust nodePort as needed
             type: NodePort
 
