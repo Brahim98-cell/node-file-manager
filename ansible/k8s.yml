@@ -1,6 +1,6 @@
 ---
 - name: Deploy Node File Manager application on Kubernetes
-  hosts: localhost  # Assuming Ansible is running locally
+  hosts: all  # Assuming Ansible is running locally
   gather_facts: false
   become: yes
 
