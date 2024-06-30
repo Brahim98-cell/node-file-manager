@@ -35,13 +35,17 @@ stage('Build image node file manager') {
 
 
 
-         stage('Build and Deploy node file manager') {
+ 
+         stage('Deployment stage ') {
     steps {
-       
-        sh "/usr/bin/docker-compose -f compose.yaml up -d"
+    dir('ansible') {
+
+        sh "sudo ansible-playbook -u root k8s.yml -i inventory/host.yml"
     }
+
 }
-                
+
+}               
 
 
 

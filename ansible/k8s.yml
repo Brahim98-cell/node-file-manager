@@ -1,0 +1,69 @@
+---
+- name: Deploy Node File Manager application on Kubernetes
+  hosts: localhost  # Assuming Ansible is running locally
+  gather_facts: false
+  become: yes
+
+  tasks:
+    - name: Create Node File Manager deployment
+      k8s:
+        kubeconfig: "~/.kube/config"
+        state: present
+        definition:
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: node-file-manager-deployment
+            namespace: tawasalna
+            labels:
+              app: my-app-node-file-manager
+          spec:
+            replicas: 1
+            selector:
+              matchLabels:
+                app: my-app-node-file-manager
+            template:
+              metadata:
+                labels:
+                  app: my-app-node-file-manager
+              spec:
+                containers:
+                  - name: node-file-manager-container
+                    image: brahim98/devops_project_front:node-file-manager
+                    imagePullPolicy: Always
+                    ports:
+                      - containerPort: ${PORT}
+                nodeSelector:
+                    kubernetes.io/hostname: worker2      
+       
+                env:
+                  - name: NODE_ENV
+                    value: production
+                  - name: PORT
+                    value: "${PORT}"
+                  - name: HOST
+                    value: "${HOST}"
+
+    - name: Create Node File Manager service
+      k8s:
+        state: present
+        kubeconfig: "~/.kube/config"
+        verify_ssl: no
+        definition:
+          apiVersion: v1
+          kind: Service
+          metadata:
+            name: node-file-manager-service
+            namespace: tawasalna
+            labels:
+              app: my-app-node-file-manager
+          spec:
+            selector:
+              app: my-app-node-file-manager
+            ports:
+              - protocol: TCP
+                port: ${PORT}
+                targetPort: ${PORT}
+                nodePort: 32567  # Adjust nodePort as needed
+            type: NodePort
+
