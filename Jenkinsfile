@@ -59,7 +59,15 @@ stage('Build image node file manager') {
         // Build the Docker images for your Spring Boot backend and Angular frontend
 
         // Start the application stack using Docker Compose
-        sh "/usr/bin/docker-compose -f compose.yaml up -d"
+       // sh "/usr/bin/docker-compose -f compose.yaml up -d"
+        sh "docker run -d \
+  --name node-file-manager \
+  -e PORT=7000 \
+  -e HOST=http://185.192.96.18 \
+  -p 7000:7000 \
+  -v public:/usr/src/app/public \
+  --restart unless-stopped \
+  brahim98/devops_project_front:node-file-manager"
     }
 }
      
