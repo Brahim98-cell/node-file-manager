@@ -60,6 +60,12 @@ stage('Build image node file manager') {
 
         // Start the application stack using Docker Compose
        // sh "/usr/bin/docker-compose -f compose.yaml up -d"
+
+
+
+      sh "docker rm node-file-manager"
+
+        
         sh "docker run -d \
   --name node-file-manager \
   -e NODE_ENV=production \
