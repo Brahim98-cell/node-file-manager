@@ -62,6 +62,9 @@ stage('Build image node file manager') {
        // sh "/usr/bin/docker-compose -f compose.yaml up -d"
 
 
+    
+
+      sh "docker stop node-file-manager"
 
       sh "docker rm node-file-manager"
 
