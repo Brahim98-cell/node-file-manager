@@ -62,6 +62,7 @@ stage('Build image node file manager') {
        // sh "/usr/bin/docker-compose -f compose.yaml up -d"
         sh "docker run -d \
   --name node-file-manager \
+  -e NODE_ENV=production \
   -e PORT=7000 \
   -e HOST=http://185.192.96.18 \
   -p 7000:7000 \
