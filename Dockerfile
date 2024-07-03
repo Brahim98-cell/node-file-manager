@@ -4,7 +4,7 @@ FROM node:${NODE_VERSION}-alpine
 
 ENV NODE_ENV production
 ENV PORT 7000
-ENV HOST http://127.0.0.1
+ENV HOST http://194.146.13.51
 
 WORKDIR /usr/src/app
 
