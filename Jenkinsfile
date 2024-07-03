@@ -12,7 +12,7 @@ pipeline {
     stages {
                 
         
-
+/*
 stage('Build image node file manager') {
             steps {
                 script {
@@ -35,7 +35,7 @@ stage('Build image node file manager') {
 
 /*
 
- 
+ */
          stage('Deployment stage ') {
     steps {
     dir('ansible') {
@@ -62,7 +62,8 @@ stage('Build image node file manager') {
        // sh "/usr/bin/docker-compose -f compose.yaml up -d"
 
 
-    
+            sh " docker ps"
+
 
   //  sh "docker stop node-file-manager"
 
