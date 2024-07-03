@@ -65,9 +65,6 @@ stage('Build image node file manager') {
            // sh " docker ps"
 
 
-   sh "docker stop 97de06c7cdcf "
-
-    sh "docker rm 97de06c7cdcf "
 
 
             sh "docker rm node-file-manager "
