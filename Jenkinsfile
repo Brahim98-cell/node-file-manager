@@ -62,12 +62,12 @@ stage('Build image node file manager') {
        // sh "/usr/bin/docker-compose -f compose.yaml up -d"
 
 
-            sh " docker ps"
+           // sh " docker ps"
 
 
    sh "docker stop 97de06c7cdcf "
 
-    // sh "docker rm 97de06c7cdcf "
+    sh "docker rm 97de06c7cdcf "
 
         
        
