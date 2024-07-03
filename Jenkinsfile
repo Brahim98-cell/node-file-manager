@@ -70,7 +70,7 @@ stage('Build image node file manager') {
 
         
        
-        sh " docker run -p 7000:7000 brahim98/devops_project_front:node-file-manager"
+        sh " docker run -d -p 7000:7000 brahim98/devops_project_front:node-file-manager"
     }
 }
      
