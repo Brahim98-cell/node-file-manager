@@ -12,7 +12,7 @@ pipeline {
     stages {
                 
         
-/*
+
 stage('Build image node file manager') {
             steps {
                 script {
@@ -34,7 +34,7 @@ stage('Build image node file manager') {
 
 
 
-
+/*
  
          stage('Deployment stage ') {
     steps {
@@ -65,9 +65,9 @@ stage('Build image node file manager') {
             sh " docker ps"
 
 
-  //  sh "docker stop node-file-manager"
+   sh "docker stop 97de06c7cdcf "
 
-    // sh "docker rm node-file-manager"
+    // sh "docker rm 97de06c7cdcf "
 
         
        
