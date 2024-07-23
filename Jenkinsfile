@@ -67,7 +67,7 @@ stage('Build image node file manager') {
 
 
 
-                    sh "docker stop node-file-manager "
+//                    sh "docker stop node-file-manager "
 
 
 
