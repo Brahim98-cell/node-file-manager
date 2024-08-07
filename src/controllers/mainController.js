@@ -11,7 +11,7 @@ export async function returnFileNames(req, res) {
   res.status(201).json({
     message: `Uploaded`,
     fileNames: req.files?.map(
-      (f) => `${HOST}:${PORT}/api/static/${f?.filename}`
+      (f) => `${HOST}/api/static/${f?.filename}`
     ),
   });
 }
