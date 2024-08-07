@@ -4,8 +4,7 @@ FROM node:${NODE_VERSION}-alpine
 
 ENV NODE_ENV production
 ENV PORT 7000
-ENV HOST http://194.146.13.51
-
+ENV HOST https://upload.tawasalna.com
 WORKDIR /usr/src/app
 
 RUN --mount=type=bind,source=package.json,target=package.json \
