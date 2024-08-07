@@ -3,7 +3,7 @@ import { HOST, PORT } from '../config/env.js';
 export async function returnFileName(req, res) {
   res.status(201).json({
     message: `Uploaded`,
-    fileName: `${HOST}:${PORT}/api/static/${req.file?.filename}`,
+    fileName: `${HOST}/api/static/${req.file?.filename}`,
   });
 }
 
