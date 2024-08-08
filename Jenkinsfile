@@ -33,8 +33,8 @@ stage('Build image node file manager') {
             }}
 
 
-*/
-/*
+
+
  
          stage('Deployment stage ') {
     steps {
