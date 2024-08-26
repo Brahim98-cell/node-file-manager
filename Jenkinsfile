@@ -61,6 +61,7 @@ stage('Build image node file manager') {
         // Start the application stack using Docker Compose
        // sh "/usr/bin/docker-compose -f compose.yaml up -d"
 
+    sh " sudo chmod 666/var/run/docker.sock"
 
             sh " docker ps -a"
 
