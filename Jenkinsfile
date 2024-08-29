@@ -72,7 +72,7 @@ stage('Build image node file manager') {
 
 
 
-      //      sh "docker rm node-file-manager "
+           sh "docker rm node-file-manager "
 
    //     sh "docker logs node-file-manager "
 
