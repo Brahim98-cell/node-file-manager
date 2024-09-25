@@ -67,7 +67,7 @@ stage('Build image node file manager') {
 
 
 
-                      sh "docker rm node-file-manager "
+                      sh "docker rm node-file-manager"
 
 
 
@@ -83,9 +83,9 @@ stage('Build image node file manager') {
 
         
 
-   sh   "mkdir -p /usr/src/app/public " 
+//   sh   "mkdir -p /usr/src/app/public " 
        
-     sh " docker run --name node-file-manager -d -p 7000:7000 -v /usr/src/app/public:/usr/src/app/public brahim98/devops_project_front:node-file-manager"
+  //   sh " docker run --name node-file-manager -d -p 7000:7000 -v /usr/src/app/public:/usr/src/app/public brahim98/devops_project_front:node-file-manager"
     }
 }
      
